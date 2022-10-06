@@ -1,16 +1,12 @@
-class Solution {
-public:
-    bool isPalindrome(int x) {
-        string s=to_string(x);
-        int l=0,r=s.length()-1;
-        while(l<=r)
-        {
-            if(s[l]!=s[r])
-                return false;
-            l++;
-            r--;
-        }
-        return true;
-        
+void printDegrees(int Root, vector<vector<int> >& adj)
+{
+    for (int i = 1; i < adj.size(); i++) {
+        cout << i << ": ";
+        // Root has no parent, thus, its degree is equal to
+        // the edges it is connected to
+        if (i == Root)
+            cout << adj[i].size() << endl;
+        else
+            cout << adj[i].size() - 1 << endl;
     }
-};
+}
